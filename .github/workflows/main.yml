@@ -31,11 +31,18 @@ jobs:
       - name: Set Default DevHub
         run: sf config set target-dev-hub=vscodeOrg
         
-
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deplo your project.
+      #Create a scratch org to test our code
+      - name: Create Scratch Org
+        run: sf org create scratch --definition-file config/project-scratch-def.json --set-default --duration-days 1 --alias actionBuild
+      
+      #Pushes all configs to scratch org
+      - name: Push to Scratch Org
+        run: sf project deploy start
+      
+      #Run Apex Tests
+      - name: Run Apex Tests
+        run: sf apex test run -l RunLocalTests
+      
+      #Delete Scratch Org after successful build  
+      - name: Delete Scratch Org
+        run: sf org delete scratch --target-org actionBuild --noprompt
