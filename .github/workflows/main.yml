@@ -22,9 +22,15 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.GITHUB_URL }}
+      
+      - name: Authenticate Dev Hub
+        run: |
+          echo "${{ secrets.GITHUB_URL }}" > sfdx-auth-url.txt
+          sf org login sfdx-url --sfdx-url-file sfdx-auth-url.txt --alias vscodeOrg --set-default-dev-hub
 
       - name: Set Default DevHub
-        run: sf org login sfdx-url -a vscodeOrg -d --sfdx-url-stdin=${{ secrets.GITHUB_URL }}
+        run: sf config set target-dev-hub=vscodeOrg
+        
 
       - name: Run a one-line script
         run: echo Hello, world!
