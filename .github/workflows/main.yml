@@ -47,4 +47,4 @@ jobs:
       
       #Delete Scratch Org after successful build  
       - name: Delete Scratch Org
-        run: sf org delete scratch --target-org actionBuild -p
+        run: sf org list
