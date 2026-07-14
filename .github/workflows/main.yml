@@ -24,7 +24,7 @@ jobs:
           sfdx-auth-url: ${{ secrets.GITHUB_URL }}
 
       - name: Set Default DevHub
-        run: sf org login sfdx-url -a vscodeOrg -d -u ${{ secrets.GITHUB_URL }}
+        run: sf org login sfdx-url -a vscodeOrg -d --sfdx-url-stdin=${{ secrets.GITHUB_URL }}
 
       - name: Run a one-line script
         run: echo Hello, world!
