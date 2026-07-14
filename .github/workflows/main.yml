@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - run: npm ci
+      - run: npm test
 
       - name: Salesforce SFDX CLI Action
         uses: sfdx-actions/setup-sfdx@v1
