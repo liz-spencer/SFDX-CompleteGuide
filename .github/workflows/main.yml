@@ -22,11 +22,6 @@ jobs:
         uses: sfdx-actions/setup-sfdx@v1
         with:
           sfdx-auth-url: ${{ secrets.DEVHUB_URL }}
-      
-      - name: Authenticate Dev Hub
-        run: |
-          echo "${{ secrets.DEVHUB_URL }}" > sfdx-auth-url.txt
-          sf org login sfdx-url --sfdx-url-file sfdx-auth-url.txt --alias vscodeOrg --set-default-dev-hub
 
       - name: Set Default DevHub
         run: sf config set target-dev-hub=vscodeOrg
