@@ -35,8 +35,7 @@ jobs:
         
       #Create a scratch org to test our code
       - name: Create Scratch Org
-        run: sf org create scratch --definition-file config/project-scratch-def.json --set-default --duration-days 1 --alias actionBuild
-      
+        run: sf org create scratch -f config/project-scratch-def.json -d -y 1 -a actionBuild       
       #Pushes all configs to scratch org
       - name: Push to Scratch Org
         run: sf project deploy start
