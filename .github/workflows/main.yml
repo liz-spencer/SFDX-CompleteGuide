@@ -43,7 +43,7 @@ jobs:
       
       #Run Apex Tests
       - name: Run Apex Tests
-        run: sf apex test run -l RunLocalTests --wait
+        run: sf apex test run -l RunLocalTests -w 30
       
       #Delete Scratch Org after successful build  
       - name: Delete Scratch Org
