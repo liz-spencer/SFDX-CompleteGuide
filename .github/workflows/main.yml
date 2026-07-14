@@ -24,7 +24,7 @@ jobs:
           sfdx-auth-url: ${{ secrets.GITHUB_URL }}
 
       - name: Set Default DevHub
-        run: sf config set target-org vscodeOrg
+        run: sf config set target-dev-hub=vscodeOrg
 
       - name: Run a one-line script
         run: echo Hello, world!
