@@ -1,0 +1,27 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef1"
+            },
+            "Name": "Sample Account for Entitlements"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef2"
+            },
+            "Name": "test",
+            "Phone": "(555) 555-5555"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef3"
+            },
+            "Name": "test2",
+            "Phone": "(555) 555-5555"
+        }
+    ]
+}
