@@ -35,25 +35,18 @@ jobs:
           echo "${{ secrets.DEVHUB_URL }}" > sfdx-auth-url.txt
           sf org login sfdx-url --sfdx-url-file sfdx-auth-url.txt --alias vscodeOrg --set-default-dev-hub
 
-      # - name: Set Default DevHub
-      #   run: sf config set target-dev-hub=vscodeOrg
-        
-      # #Create a scratch org to test our code
-      # - name: Create Scratch Org
-      #   run: sf org create scratch -f config/project-scratch-def.json -d -y 1 -a actionBuild -v vscodeOrg      
-
-      # #Pushes all configs to scratch org
-      # - name: Push to Scratch Org
-      #   run: sf project deploy start -o actionBuild
+      - name: Set Default DevHub
+        run: sf config set target-dev-hub=vscodeOrg
       
-      # #Run Apex Tests
-      # - name: Run Apex Tests
-      #   run: sf apex test run -l RunLocalTests -w 30 -o actionBuild 
-      
-      # #Delete Scratch Org after successful build  
-      # - name: Delete Scratch Org
-      #   run: sf org delete scratch --target-org actionBuild -p
-
-      #Debugging
-      - name: List Orgs
-        run: sf org list
+      #Create a scratch org to test our code
+      - name: Create Scratch Org
+        run: sf org create scratch -f config/project-scratch-def.json -d -y 1 -a actionBuild -v vscodeOrg      
+     #Pushes all configs to scratch org
+      - name: Push to Scratch Org
+        run: sf project deploy start -o actionBuild
+           #Run Apex Tests
+      - name: Run Apex Tests
+        run: sf apex test run -l RunLocalTests -w 30 -o actionBuild 
+           #Delete Scratch Org after successful build  
+      - name: Delete Scratch Org
+        run: sf org delete scratch --target-org actionBuild -p
