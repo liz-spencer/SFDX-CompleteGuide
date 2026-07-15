@@ -45,7 +45,7 @@ jobs:
       #   run: sf org create scratch -f config/project-scratch-def.json -d -y 1 -a actionBuild -v vscodeOrg      
      #Pushes all configs to scratch org
       - name: Push to Scratch Org
-        run: sf project deploy start -o actionBuild -c
+        run: sf project deploy start -o actionBuild
            #Run Apex Tests
       - name: Run Apex Tests
         run: sf apex test run -l RunLocalTests -w 30 -o actionBuild 
