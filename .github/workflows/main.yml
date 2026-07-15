@@ -24,6 +24,8 @@ jobs:
         run: npm install --global @salesforce/cli
       - run: npm ci
       - run: npm test
+      - name: SF UPDATE
+        run: sf update
 
       - name: Salesforce SFDX CLI Action
         uses: sfdx-actions/setup-sfdx@v1
