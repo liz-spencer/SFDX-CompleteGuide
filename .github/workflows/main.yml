@@ -24,8 +24,6 @@ jobs:
         run: npm install --global @salesforce/cli
       - run: npm ci
       - run: npm test
-      - name: SF UPDATE
-        run: sf update
 
       - name: Salesforce SFDX CLI Action
         uses: sfdx-actions/setup-sfdx@v1
@@ -52,6 +50,10 @@ jobs:
       # - name: Run Apex Tests
       #   run: sf apex test run -l RunLocalTests -w 30 -o actionBuild 
       
-      #Delete Scratch Org after successful build  
-      - name: Delete Scratch Org
-        run: sf org delete scratch --target-org actionBuild -p
+      # #Delete Scratch Org after successful build  
+      # - name: Delete Scratch Org
+      #   run: sf org delete scratch --target-org actionBuild -p
+
+      #Debugging
+      - name: List Orgs
+        run: sf org list
