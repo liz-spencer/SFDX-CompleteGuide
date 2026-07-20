@@ -3,11 +3,16 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Course_Test__c.Test_Text_Field__c</field>
+        <field>Org_Based_Object1__c.Test_Field_1_c__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Org_Based_Object1__c.Test_Field_2_c__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Course_Test__c-Course Test Object Layout</layout>
+        <layout>Org_Based_Object1__c-Org-Based Object Layout</layout>
     </layoutAssignments>
     <userLicense>External Apps Login</userLicense>
     <userPermissions>

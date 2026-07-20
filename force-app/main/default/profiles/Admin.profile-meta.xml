@@ -3,11 +3,16 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Course_Test__c.Test_Text_Field__c</field>
+        <field>Org_Based_Object1__c.Test_Field_1_c__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Org_Based_Object1__c.Test_Field_2_c__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Course_Test__c-Course Test Object Layout</layout>
+        <layout>Org_Based_Object1__c-Org-Based Object Layout</layout>
     </layoutAssignments>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -15,7 +20,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Course_Test__c</object>
+        <object>Org_Based_Object1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <userLicense>Salesforce</userLicense>
